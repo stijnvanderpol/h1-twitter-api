@@ -14,3 +14,9 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+
+$router->get('/api/tweets', [
+    'as' => 'getTweets',
+    'uses' => 'TwitterController@search'
+]);
