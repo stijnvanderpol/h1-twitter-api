@@ -25,7 +25,8 @@ class TwitterClient {
                     'Authorization' => 'Bearer ' . $this->accessToken
                 ],
                 'query' => [
-                    'q' => $queryString
+                    'q' => $queryString,
+                    'count' => 100
                 ]
             ]);
 
