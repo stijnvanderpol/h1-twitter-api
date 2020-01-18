@@ -18,10 +18,10 @@ class TwitterController extends Controller
 
     public function search(Request $request) {
         $this->validate($request, [
-            'query' => 'required|max:100'
+            'q' => 'required|max:100'
         ]);
         
-        $tweets = $this->service->searchTweet($request->input('query'));
+        $tweets = $this->service->searchTweet($request->input('q'));
         return response()->json($tweets);
     }
 }
