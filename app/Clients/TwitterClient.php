@@ -2,10 +2,15 @@
 
 namespace App\Clients;
 
+use GuzzleHttp\Client;
+
 class TwitterClient {
 
-    public function __construct() {
+    private $client; 
 
+    public function __construct() {
+        $this->client = new Client([
+            'base_uri' => 'https://api.twitter.com'
+        ]);
     }
-    
 }
